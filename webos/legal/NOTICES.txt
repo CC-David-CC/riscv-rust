@@ -1,0 +1,21 @@
+RISC-V Machine Lab
+
+The RISC-V emulator comes from Takahiro's riscv-rust under the MIT License.
+https://github.com/takahirox/riscv-rust/tree/8ee69d7a5dc7ef6d8b2bda96bf86d2923f2cf176
+https://github.com/CC-David-CC/riscv-rust/tree/webos/browser-files/webos
+
+The xv6 kernel and filesystem are the exact binary fixtures distributed
+with that riscv-rust source. The upstream build notes and binary update
+are recorded in the emulator repository.
+https://github.com/takahirox/riscv-rust/tree/8ee69d7a5dc7ef6d8b2bda96bf86d2923f2cf176/resources/xv6
+https://github.com/takahirox/riscv-rust/commit/341e8f481ee5511e7372e7e9822aa88671f6569c
+
+xv6 is a teaching operating system developed at MIT under the MIT License.
+https://github.com/mit-pdos/xv6-riscv
+https://github.com/mit-pdos/xv6-riscv/blob/af570f582cafe3326116f202ab26d81fe95d320a/LICENSE
+
+The emulator's browser build uses wasm-bindgen 0.2.129 and Rust's runtime.
+The shell uses the MIT-licensed xterm.js package included by WebOS.
+https://github.com/wasm-bindgen/wasm-bindgen/tree/0.2.129
+https://github.com/rust-lang/rust/tree/58cf8f9c35b355199727627d07ae34a4e2846d67/library
+https://github.com/xtermjs/xterm.js/tree/6.0.0

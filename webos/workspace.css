@@ -1,0 +1,56 @@
+.riscv-machine-lab {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  min-width: 0;
+  min-height: 0;
+  color: #d5d9e1;
+  background: #161c25;
+}
+
+.riscv-project {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+  padding: 10px;
+}
+
+.riscv-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.riscv-project textarea {
+  box-sizing: border-box;
+  min-height: 120px;
+  flex: 1;
+  resize: none;
+  padding: 8px;
+  font: 13px/1.5 ui-monospace, monospace;
+}
+
+.riscv-status {
+  margin: 0;
+  font-size: 12px;
+}
+
+.riscv-project a {
+  color: #8bcaff;
+}
+
+.riscv-terminal {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+@media (max-width: 680px) {
+  .riscv-machine-lab {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(260px, 1fr);
+    overflow: auto;
+  }
+}
