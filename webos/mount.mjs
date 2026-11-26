@@ -34,6 +34,7 @@ export function mount(host) {
   status.setAttribute('role', 'status');
   const source = document.createElement('textarea');
   source.setAttribute('aria-label', 'xv6 command script');
+  source.setAttribute('autocapitalize', 'off');
   source.spellcheck = false;
   source.value = example;
   const serial = make('div', 'riscv-terminal');
@@ -122,7 +123,10 @@ export function mount(host) {
         });
         if (choice == null) return;
         let name = validName(choice.trim());
-        if (!name.toLowerCase().endsWith(extension)) name += extension;
+        if (!name.toLowerCase().endsWith(extension)) {
+          if (name.includes('.')) throw Error('Use a .riscvlab.json filename.');
+          name += extension;
+        }
         const parent = filesPath(folder, true);
         path = filesPath(parent ? parent + '/' + name : name);
       }
@@ -239,9 +243,14 @@ export function mount(host) {
     tell('xv6 stopped.');
   }
 
+  function focusConsole() {
+    serial.scrollIntoView({block: 'nearest'});
+    terminal.focus();
+  }
+
   toolbar.append(textButton('New', newProject), textButton('Open', pick), textButton('Save', save(false)),
     textButton('Save As', save(true)), textButton('Boot xv6', boot), textButton('Stop', stopMachine),
-    textButton('Run script', runScript));
+    textButton('Run script', runScript), textButton('Console', focusConsole));
   panel.append(toolbar, source, status, legal);
   element.append(panel, serial);
   terminal.open(serial);

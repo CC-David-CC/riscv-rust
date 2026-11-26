@@ -3,8 +3,8 @@
   grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
   min-width: 0;
   min-height: 0;
-  color: #d5d9e1;
-  background: #161c25;
+  color: light-dark(#1b1d20, #f3f6f8);
+  background: light-dark(#f4f4f5, #252a30);
 }
 
 .riscv-project {
@@ -14,6 +14,7 @@
   min-width: 0;
   min-height: 0;
   padding: 10px;
+  border-right: 1px solid light-dark(#d4d4d8, #56616c);
 }
 
 .riscv-project-actions {
@@ -29,15 +30,20 @@
   resize: none;
   padding: 8px;
   font: 13px/1.5 ui-monospace, monospace;
+  color: inherit;
+  background: light-dark(#fff, #1d232a);
+  border: 1px solid light-dark(#738292, #8897a4);
+  border-radius: 4px;
 }
 
 .riscv-status {
   margin: 0;
-  font-size: 12px;
+  font-size: .875rem;
+  overflow-wrap: anywhere;
 }
 
 .riscv-project a {
-  color: #8bcaff;
+  color: light-dark(#20588b, #9ed1ff);
 }
 
 .riscv-terminal {
@@ -50,7 +56,20 @@
 @media (max-width: 680px) {
   .riscv-machine-lab {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(260px, 1fr);
+    grid-template-rows: auto minmax(175px, 1fr);
     overflow: auto;
+  }
+
+  .riscv-project {
+    border-right: 0;
+    border-bottom: 1px solid light-dark(#d4d4d8, #56616c);
+  }
+
+  .riscv-project-actions button {
+    min-height: 44px;
+  }
+
+  .riscv-project textarea {
+    font-size: 16px;
   }
 }
